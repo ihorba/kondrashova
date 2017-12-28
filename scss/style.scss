@@ -1,0 +1,225 @@
+@import "normalize.scss";
+@import "slick";
+@import "layout.scss";
+
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,700&subset=cyrillic');
+
+$body-font: 'Oswald', sans-serif;;
+$text-color: #4d4d4d;
+$secondary-color: #00bd08;
+
+body{
+	font: 400 16px/1.6 $body-font;
+	color: $text-color;
+}
+
+
+/* Layout */
+.ba-container{
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1200px;
+}
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+	height: 50px;
+	border: 1px solid $text-color;
+	background: none;
+	line-height: 50px;
+	text-decoration: none;
+	color: $text-color;
+	padding: 0 30px;
+	color: $text-color;
+	letter-spacing: 0.05em;
+	font-weight: 500;
+
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover{
+	color: $secondary-color;
+	border: 1px solid transparent;
+	box-shadow: 17px -6px 26.68px 2.32px rgba(0, 0, 0, 0.1);
+	background: #FFF;
+	color: $text-color;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+
+}
+textarea {
+
+}
+
+.ba-header {
+	background-color: #fff;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding-top: 5px;
+	z-index: 10;
+}
+
+.ba-logo {
+	float: left;
+	width: 10%;
+}
+
+.ba-nav {
+	float: right;
+	width: 60%;
+	padding-top: 17px;
+}
+
+.ba-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		text-decoration: none;
+		color: $text-color;
+		padding: 5px;
+		letter-spacing: 0.05em;
+
+		&:hover {
+			border-bottom: 2px solid $secondary-color;
+			color: $secondary-color;
+		}
+	}
+}
+
+.ba-intro {
+	background: #e2e2e2 url('../img/bg-intro.png') 50% no-repeat;
+	background-size: cover;
+	padding: 150px 0;
+
+	&__body {
+		display: flex;
+		align-items: center;
+	}
+
+	.ba-photo-container {
+		border-radius: 50%;
+		border: 3px solid #fff;
+		width: 400px;
+		height: 400px;
+		background: url('../img/photo.jpg') 70% 50%;
+	}
+
+	&__info {
+		padding-right: 50px;
+	}
+
+	&__title {
+		font-size: 90px;
+		line-height: 1.2;
+		margin: 0;
+	}
+
+	&__subtitle {
+		color: $secondary-color;
+		font-weight: 500;
+
+	}
+}
+
+.ba-button--intro {
+	margin-right: 20px;
+}
+
+.ba-about {
+	padding: 100px 0;
+
+	&__info {
+		padding: 80px 50px 0 0;
+
+	}
+
+	&__title {
+		font-size: 46px;
+		margin: 0 0 20px;
+		letter-spacing: 0.05em;
+		line-height: 1.2;
+		position: relative;
+
+		&:before {
+			content: '';
+			height: 4px;
+			width: 250px;
+			position: absolute;
+			left: 0;
+			top: -20px;
+			background-color: $text-color;
+		}
+	}
+}
+
+.ba-button--about {
+	&:hover {
+		background-color: $text-color;
+		color: #FFF;
+		box-shadow: none;
+	}
+}
+
+.ba-pofessional {
+	background: #cee1ce url('../img/bg-board.jpg');
+	padding: 80px 0;
+
+	&__body {
+		max-width: 70%;
+		margin: 0 auto;
+	}
+
+}
+
+.ba-education {
+	float: left;
+	width: 48%;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 30px 50px;
+}
+
+.ba-experience {
+	float: right;
+	width: 48%;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 30px 50px;
+}
