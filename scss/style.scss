@@ -52,9 +52,9 @@ button:hover,
 .ba-button:hover{
 	color: $secondary-color;
 	border: 1px solid transparent;
-	box-shadow: 17px -6px 26.68px 2.32px rgba(0, 0, 0, 0.1);
 	background: #FFF;
 	color: $text-color;
+	box-shadow: 17px -6px 26.68px 2.32px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"],
@@ -126,8 +126,7 @@ textarea {
 }
 
 .ba-intro {
-	background: #e2e2e2 url('../img/bg-intro.png') 50% no-repeat;
-	background-size: cover;
+	background: #e2e2e2 url('../img/bg-elements.jpg');
 	padding: 150px 0;
 
 	&__body {
@@ -222,4 +221,31 @@ textarea {
 	width: 48%;
 	background: rgba(255, 255, 255, 0.6);
 	padding: 30px 50px;
+}
+
+.ba-gallery {
+	padding: 60px 0;
+	text-align: center;
+
+	&__title {
+		font-size: 46px;
+		position: relative;
+	}
+}
+
+.ba-slider-arrows {
+	margin-top: 40px;
+}
+
+.ba-slide {
+	padding: 0 10px;
+}
+
+.ba-slider-prev,
+.ba-slider-next {
+	&:hover {
+		background-color: $text-color;
+		color: #FFF;
+		box-shadow: none;
+	}
 }

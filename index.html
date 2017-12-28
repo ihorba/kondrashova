@@ -19,7 +19,7 @@
 			</a>
 			<nav class="ba-nav">
 				<ul class="ba-menu">
-					<li><a href="#">ГЛАВНАЯ</a></li>
+					<li><a href="#intro">ГЛАВНАЯ</a></li>
 					<li><a href="#about">ОБО МНЕ</a></li>
 					<li><a href="#gallery">ГАЛЕРЕЯ</a></li>
 					<li><a href="#students">УЧЕНИКАМ</a></li>
@@ -30,7 +30,7 @@
 		</div>
 	</header>
 	<main>
-		<section class="ba-intro">
+		<section class="ba-intro" id="intro">
 			<div class="ba-container">
 				<div class="ba-intro__body">
 					<div class="ba-intro__info">
@@ -81,31 +81,54 @@
 				</div>
 			</div>
 		</section>
+		<section class="ba-gallery" id="gallery">
+			<h2 class="ba-gallery__title">НАШИ МЕРОПРИЯТИЯ В ШКОЛЕ:</h3>
+
+				<div class="ba-slider">
+					<div class="ba-slide"><img src="img/school-1.jpg"></div>
+					<div class="ba-slide"><img src="img/school-2.jpg"></div>
+					<div class="ba-slide"><img src="img/school-3.jpg"></div>
+					<div class="ba-slide"><img src="img/school-4.jpg"></div>
+					<div class="ba-slide"><img src="img/school-5.jpg"></div>
+					<div class="ba-slide"><img src="img/school-6.jpg"></div>
+				</div>
+				<div class="ba-slider-arrows">
+					<button class="ba-slider-prev">
+						<span class="ba-play-arrow">&#9668;</span>
+					</button>
+
+					<button class="ba-slider-next">
+
+						<span class="ba-play--arrow">&#9658;</span>
+					</button>
+				</div>
+
+
+
+			</section>
 
 
 
 
-	</main>
+		</main>
 
 
 
 
-	<svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
-		<defs>
-			<symbol id="logo" viewBox="">
+		<svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
+			<defs>
+				<symbol id="logo" viewBox="">
 
-			</symbol>
-		</defs>
-	</svg>
+				</symbol>
+			</defs>
+		</svg>
 
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpbXYfmcN3bVCABmJBcJP0FxvOshydpQE">
-</script>
-<script
-src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-crossorigin="anonymous"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/main.js"></script>
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpbXYfmcN3bVCABmJBcJP0FxvOshydpQE">
+	</script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
