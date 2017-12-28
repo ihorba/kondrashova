@@ -772,6 +772,8 @@ select {
 
 .ba-slide {
   padding: 0 10px; }
+  .ba-slide img {
+    display: block; }
 
 .ba-slider-prev:hover,
 .ba-slider-next:hover {
