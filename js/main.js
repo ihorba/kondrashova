@@ -1,25 +1,27 @@
 ;(function($){
 	"use strict"
+	$(document).ready(function() {
 
-	var teamSlider = $('.ba-slider');
-	teamSlider.slick({
-		slide: '.ba-slide',
-		arrows: true,
-		prevArrow: '.ba-slider-prev',
-		nextArrow: '.ba-slider-next',
-		centerMode: true,
-		centerPadding: '60px',
-		slidesToShow: 3,
-		responsive: [
-		  {
-		    breakpoint: 768,
-		    settings: {
-		      centerMode: true,
-		      centerPadding: '40px',
-		      slidesToShow: 1
-		    }
-		  }
-		]
+		var teamSlider = $('.ba-slider');
+		teamSlider.slick({
+			slide: '.ba-slide',
+			arrows: true,
+			prevArrow: '.ba-slider-prev',
+			nextArrow: '.ba-slider-next',
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 3,
+			responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					centerMode: true,
+					centerPadding: '40px',
+					slidesToShow: 1
+				}
+			}
+			]
+		});
 	});
 
 	// Select all links with hashes
@@ -30,34 +32,34 @@
 	  .click(function(event) {
 	    // On-page links
 	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-	      &&
-	      location.hostname == this.hostname
-	    ) {
+	    	location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+	    	&&
+	    	location.hostname == this.hostname
+	    	) {
 	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	  var target = $(this.hash);
+	  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 	      // Does a scroll target exist?
 	      if (target.length) {
 	        // Only prevent default if animation is actually gonna happen
 	        event.preventDefault();
 	        $('html, body').animate({
-	          scrollTop: target.offset().top
+	        	scrollTop: target.offset().top
 	        }, 800, function() {
 	          // Callback after animation
 	          // Must change focus!
 	          var $target = $(target);
 	          $target.focus();
 	          if ($target.is(":focus")) { // Checking if the target was focused
-	            return false;
+	          	return false;
 	          } else {
 	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
 	            $target.focus(); // Set focus again
-	          };
-	        });
-	      }
+	        };
+	    });
 	    }
-	  });
+	}
+});
 
 	// function initMap() {
 	// 	var roma = {lat: 42.462473, lng: 11.832275};
