@@ -127,35 +127,56 @@ textarea {
 
 .ba-intro {
 	background: #e2e2e2 url('../img/bg-elements.jpg');
-	padding: 150px 0;
+	padding: 150px 0 100px;
 
 	&__body {
 		display: flex;
 		align-items: center;
 	}
 
-	.ba-photo-container {
-		border-radius: 50%;
-		border: 3px solid #fff;
-		width: 400px;
-		height: 400px;
-		background: url('../img/photo.jpg') 70% 50%;
+	&__info {
+		width: 50%;
 	}
 
-	&__info {
-		padding-right: 50px;
+	&__photo {
+		width: 50%;
 	}
 
 	&__title {
 		font-size: 90px;
 		line-height: 1.2;
-		margin: 0;
+		margin: 0 0 5px;
 	}
 
 	&__subtitle {
 		color: $secondary-color;
 		font-weight: 500;
+		font-size: 24px;
+		line-height: 1;
 
+	}
+}
+
+.ba-photo-container {
+	animation-name: spin;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	margin: 0 auto;
+	border-radius: 50%;
+	background: url('../img/intro-rotate.png') 50% 35% no-repeat;
+	background-size: 70%;
+	height: 300px;
+	width: 300px;
+	border: 10px solid #4D4D4D;
+}
+
+@keyframes spin {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
 	}
 }
 
@@ -167,7 +188,11 @@ textarea {
 	padding: 100px 0;
 
 	&__info {
-		padding: 80px 50px 0 0;
+	img {
+		display: block;
+		float: right;
+		margin-left: 30px;
+	}
 
 	}
 
@@ -198,33 +223,38 @@ textarea {
 	}
 }
 
-.ba-pofessional {
+// professional
+
+.ba-professional {
 	background: #cee1ce url('../img/bg-board.jpg');
 	padding: 80px 0;
 
 	&__body {
-		max-width: 70%;
-		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
 	}
 
+	&__title {
+		text-align: center;
+	}
 }
 
-.ba-education {
-	float: left;
-	width: 48%;
-	background: rgba(255, 255, 255, 0.6);
-	padding: 30px 50px;
-}
-
+.ba-education,
 .ba-experience {
-	float: right;
-	width: 48%;
 	background: rgba(255, 255, 255, 0.6);
-	padding: 30px 50px;
+	padding: 30px 20px;
+	width: 48%;
+
+	li + li {
+		margin-top: 20px;
+	}
 }
+
+
+// sliders
 
 .ba-gallery {
-	padding: 60px 0;
+	padding: 40px 0;
 	text-align: center;
 
 	&__title {
@@ -246,6 +276,79 @@ textarea {
 
 .ba-slider-prev,
 .ba-slider-next {
+	&:hover {
+		background-color: $text-color;
+		color: #FFF;
+		box-shadow: none;
+	}
+}
+
+// students
+
+.ba-students {
+	background-color:  #e2e2e2;
+	padding: 60px 0 80px;
+
+	&__title {
+		font-size: 46px;
+		text-align: center;
+		margin: 0 0 50px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__col {
+		width: 20%;
+		text-align: center;
+		perspective: 500px;
+	}
+
+	&__link-text {
+		display: inline-block;
+		font-size: 24px;
+		font-weight: 500;
+		padding: 0 20px 10px;
+		border-bottom: 2px solid transparent;
+		margin: 0;
+
+	}
+	&__link {
+		text-decoration: none;
+		color: $text-color;
+
+		&:hover .ba-students__link-text {
+			border-bottom: 2px solid $secondary-color;
+			color: $secondary-color;
+			transition: color 1s;
+		}
+		&:hover .ba-students__icon {
+			transform: rotateX(180deg);
+			transition: transform 1.5s ease-in-out;
+		}
+	}
+
+	&__icon {
+		display: inline-block;
+		svg {
+			fill: currentColor;
+			width: 60%;
+		}
+		perspective: 700px;
+		transform: rotateX(0deg);
+		transition: transform 1.5s ease-in-out;
+	}
+}
+
+.ba-slide2 {
+	margin-right: 20px;
+}
+
+.ba-slider-next2,
+.ba-slider-prev2 {
 	&:hover {
 		background-color: $text-color;
 		color: #FFF;
