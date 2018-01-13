@@ -9,6 +9,11 @@ $body-font: 'Oswald', sans-serif;;
 $text-color: #4d4d4d;
 $secondary-color: #00bd08;
 
+$bp-small: 480px;
+$bp-medium: 768px;
+$bp-large: 960px;
+$bp-xlarge: 1200px;
+
 body{
 	font: 400 16px/1.6 $body-font;
 	color: $text-color;
@@ -88,19 +93,33 @@ textarea {
 	top: 0;
 	padding-top: 5px;
 	z-index: 10;
-	border-top: 2px solid $text-color;
-	border-bottom: 2px solid $text-color;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .ba-logo {
+	display: block;
+	width: 120px;
 	float: left;
-	width: 10%;
+	vertical-align: middle;
+	@media (max-width: $bp-medium) {
+		width: 90px;
+	}
 }
 
 .ba-nav {
+	width: 65%;
 	float: right;
-	width: 60%;
-	padding-top: 17px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	@media (max-width: $bp-large) {
+		width: 85%;
+	}
+
 }
 
 .ba-menu {
@@ -108,17 +127,25 @@ textarea {
 	padding: 0;
 	margin: 0;
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
 
 	li {
 		display: inline-block;
+		padding: 0;
 	}
 
 	a {
 		text-decoration: none;
+		display: block;
 		color: $text-color;
-		padding: 5px;
+		padding: 0 5px 5px;
 		letter-spacing: 0.05em;
+		border-bottom: 2px solid transparent;
+		@media (max-width: $bp-medium) {
+			font-size: 12px;
+		}
 
 		&:hover {
 			border-bottom: 2px solid $secondary-color;
@@ -127,9 +154,14 @@ textarea {
 	}
 }
 
+// intro
+
 .ba-intro {
 	background: #e2e2e2 url('../img/bg-elements.jpg');
 	padding: 150px 0 100px;
+	@media (max-width: $bp-medium) {
+		padding: 100px 0 50px;
+	}
 
 	&__body {
 		display: flex;
@@ -137,17 +169,26 @@ textarea {
 	}
 
 	&__info {
-		width: 50%;
+		@media (min-width: $bp-large) {
+			width: 50%;
+		}
 	}
 
 	&__photo {
 		width: 50%;
+		perspective: 500px;
+		@media (max-width: $bp-large) {
+			display: none;
+		}
 	}
 
 	&__title {
-		font-size: 90px;
+		font-size: 75px;
 		line-height: 1.2;
 		margin: 0 0 5px;
+		@media (max-width: $bp-small) {
+			font-size: 50px;
+		}
 	}
 
 	&__subtitle {
@@ -175,10 +216,10 @@ textarea {
 
 @keyframes spin {
 	from {
-		transform:rotate(0deg);
+		transform:rotateY(0deg);
 	}
 	to {
-		transform:rotate(360deg);
+		transform:rotateY(360deg);
 	}
 }
 
@@ -186,34 +227,36 @@ textarea {
 	margin-right: 20px;
 }
 
+// about
+
 .ba-about {
 	padding: 60px 0 40px;
+	p {
+		text-align: justify;
+	}
 
 	&__info {
-	img {
-		display: block;
-		float: right;
-		margin-left: 30px;
-	}
+		img {
+			display: block;
+			float: right;
+			margin-left: 30px;
+			@media (max-width: $bp-large) {
+				margin-left: 0;
+				float: none;
+				width: 100%;
+			}
+		}
 
 	}
 
 	&__title {
+		display: inline-block;
 		font-size: 46px;
 		margin: 0 0 20px;
 		letter-spacing: 0.05em;
 		line-height: 1.2;
-		position: relative;
+		border-top: 4px solid $text-color;
 
-		&:before {
-			content: '';
-			height: 4px;
-			width: 250px;
-			position: absolute;
-			left: 0;
-			top: -10px;
-			background-color: $text-color;
-		}
 	}
 }
 
@@ -229,11 +272,12 @@ textarea {
 
 .ba-professional {
 	background: #cee1ce url('../img/bg-board.jpg');
-	padding: 80px 0;
+	padding: 60px 0;
 
 	&__body {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 
 	&__title {
@@ -244,24 +288,39 @@ textarea {
 .ba-education,
 .ba-experience {
 	background: rgba(255, 255, 255, 0.6);
-	padding: 30px 20px;
+	padding: 20px 30px 20px 10px;
 	width: 48%;
+
+	@media (max-width: $bp-medium) {
+		width: 100%;
+	}
 
 	li + li {
 		margin-top: 20px;
 	}
 }
-
+@media (max-width: $bp-medium) {
+	.ba-experience {
+		margin-top: 20px;
+	}
+}
 
 // sliders
 
 .ba-gallery {
-	padding: 40px 0;
+	padding: 20px 0 40px;
 	text-align: center;
 
 	&__title {
 		font-size: 46px;
-		position: relative;
+		border-top: 4px solid $text-color;
+		display: inline-block;
+		line-height: 1.2;
+		@media (max-width: $bp-medium) {
+			font-size: 30px;
+		}
+
+
 	}
 }
 
@@ -269,12 +328,17 @@ textarea {
 	margin-top: 40px;
 }
 
-.ba-slide {
-	padding: 0 10px;
+.ba-slide,
+.ba-slide3,
+.ba-slide2,
+.ba-slide4  {
+	margin-right: 20px;
 	img {
 		display: block;
 	}
 }
+
+
 
 .ba-slider-prev,
 .ba-slider-next {
@@ -284,22 +348,32 @@ textarea {
 		box-shadow: none;
 	}
 }
+.ba-slider-next4,
+.ba-slider-prev4,
+.ba-slider-next3,
+.ba-slider-prev3,
+.ba-slider-next2,
+.ba-slider-prev2 {
+	&:hover {
+		background-color: $text-color;
+		color: #FFF;
+		box-shadow: none;
+	}
+}
 
 // students
 
-.ba-documents {
-	padding: 60px 0 80px;
-	background: #e2e2e2 url('../img/bg-elements.jpg');
-}
-
 .ba-students {
 	background: #e2e2e2 url('../img/bg-elements.jpg');
-	padding: 60px 0 80px;
+	padding: 60px 0;
+	text-align: center;
 
 	&__title {
 		font-size: 46px;
-		text-align: center;
-		margin: 0 0 50px;
+		margin: 0 0 30px;
+		border-top: 4px solid $text-color;
+		display: inline-block;
+		line-height: 1.2;
 	}
 
 	&__body {
@@ -312,15 +386,22 @@ textarea {
 		width: 20%;
 		text-align: center;
 		perspective: 500px;
+		@media (max-width: $bp-medium) {
+			width: 50%;
+		}
 	}
 
 	&__link-text {
 		display: inline-block;
 		font-size: 24px;
+		line-height: 1.2;
 		font-weight: 500;
 		padding: 0 20px 10px;
 		border-bottom: 2px solid transparent;
 		margin: 0;
+		@media (max-width: $bp-medium) {
+			font-size: 14px;
+		}
 
 	}
 	&__link {
@@ -349,40 +430,46 @@ textarea {
 	}
 }
 
-.ba-slide2 {
-	margin-right: 20px;
-}
+// materials
 
-.ba-slider-next2,
-.ba-slider-prev2 {
-	&:hover {
-		background-color: $text-color;
-		color: #FFF;
-		box-shadow: none;
-	}
-}
 .ba-materials {
 	padding: 60px 0 80px;
 	background-color: $text-color;
 	color: #FFF;
+	text-align: center;
 	&__body {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
+
+	&__title {
+		font-size: 46px;
+		text-align: center;
+		margin: 0 0 30px;
+		border-top: 4px solid #fff;
+		display: inline-block;
+		line-height: 1.2;
+	}
 	&__col {
 		width: 15%;
 		text-align: center;
 		perspective: 500px;
+		@media (max-width: $bp-large) {
+			width: 30%;
+		}
 	}
 
 	&__link-text {
 		display: inline-block;
-		font-size: 24px;
+		font-size: 18px;
 		font-weight: 500;
 		padding: 0 0 10px;
 		border-bottom: 2px solid transparent;
 		margin: 0;
+		@media (max-width: $bp-medium) {
+			font-size: 14px;
+		}
 
 	}
 	&__link {
@@ -410,7 +497,162 @@ textarea {
 	}
 }
 
+// documents
+
+.ba-documents {
+	padding: 60px 0;
+	background: #e2e2e2 url('../img/bg-elements.jpg');
+	text-align: center;
+}
+
+.ba-stats {
+	padding: 60px 0;
+	text-align: center;
+	background-color: #e2e2e2;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__icon {
+		svg {
+			fill: currentColor;
+			width: 60%;
+		}
+	}
+	&__col {
+		width: 20%;
+		@media (max-width: $bp-medium) {
+			width: 50%;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__info {
+		font-size: 24px;
+		margin: 0;
+		line-height: 1.2;
+		@media (max-width: $bp-medium) {
+			font-size: 18px;
+		}
+	}
+}
+
+
+// contact
+
+.ba-contact {
+	background: $text-color url("../img/contact.jpg") 50% no-repeat;
+	background-size: cover;
+	color: #FFF;
+	text-align: center;
+	padding: 60px 0 0;
+	&__title {
+		font-size: 46px;
+		margin: 0 0 50px;
+		border-top: 4px solid #fff;
+		display: inline-block;
+		line-height: 1.2;
+		@media (max-width: $bp-medium) {
+			font-size: 30px;
+		}
+	}
+	&__form {
+		display: block;
+		margin: 0 auto 50px;
+		@media (min-width: $bp-medium) {
+			max-width: 770px;
+		}
+
+	}
+
+}
+
+.ba-contact-form__row {
+	display: inline-block;
+	float: left;
+	width: 100%;
+	height: 50px;
+	border: none;
+	line-height: 50px;
+	padding-left: 10px;
+	color: $text-color;
+	margin-bottom: 5px;
+	@media (min-width: $bp-medium) {
+		width: 48%;
+		& + & {
+			margin-left: 10px;
+		}
+	}
+
+	&:focus {
+		outline: none;
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+}
+
+[type="email"] {
+	float: right;
+}
+.ba-contact-form__row--textarea {
+	display: block;
+	width: 100%;
+	resize: none;
+	border: none;
+	line-height: 50px;
+	padding-left: 10px;
+	color: $text-color;
+	margin: 20px 0 30px;
+
+
+	&:focus {
+		outline: none;
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+}
+
+.ba-button--contact {
+	color: #FFF;
+	border: 1px solid #fff;
+}
+
+.ba-footer {
+	border-top: 2px solid #fff;
+	padding: 10px 0 20px;
+	&__copyright {
+		line-height: 1;
+		@media (max-width: $bp-medium) {
+			font-size: 10px;
+		}
+	}
+
+}
+
+.ba-author {
+	display: inline-block;
+	font-size: 22px;
+	color: #FFF;
+	text-decoration: none;
+	border: 2px solid transparent;
+	@media (max-width: $bp-medium) {
+		font-size: 14px;
+	}
+
+	&:hover {
+		border-bottom: 2px solid $secondary-color;
+		color: $secondary-color;
+	}
+}
+
+
 
 .cbalink {
-    display: none !important;
+	display: none !important;
 }
+
