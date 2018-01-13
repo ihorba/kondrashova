@@ -88,6 +88,8 @@ textarea {
 	top: 0;
 	padding-top: 5px;
 	z-index: 10;
+	border-top: 2px solid $text-color;
+	border-bottom: 2px solid $text-color;
 }
 
 .ba-logo {
@@ -159,7 +161,7 @@ textarea {
 
 .ba-photo-container {
 	animation-name: spin;
-	animation-duration: 4s;
+	animation-duration: 6s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	margin: 0 auto;
@@ -185,7 +187,7 @@ textarea {
 }
 
 .ba-about {
-	padding: 100px 0;
+	padding: 60px 0 40px;
 
 	&__info {
 	img {
@@ -209,7 +211,7 @@ textarea {
 			width: 250px;
 			position: absolute;
 			left: 0;
-			top: -20px;
+			top: -10px;
 			background-color: $text-color;
 		}
 	}
@@ -287,11 +289,11 @@ textarea {
 
 .ba-documents {
 	padding: 60px 0 80px;
-	background-color:  #e2e2e2;
+	background: #e2e2e2 url('../img/bg-elements.jpg');
 }
 
 .ba-students {
-	background-color:  #e2e2e2;
+	background: #e2e2e2 url('../img/bg-elements.jpg');
 	padding: 60px 0 80px;
 
 	&__title {
@@ -342,40 +344,9 @@ textarea {
 			fill: currentColor;
 			width: 60%;
 		}
-		perspective: 700px;
 		transform: rotateX(0deg);
 		transition: transform 1.5s ease-in-out;
 	}
-}
-.ba-works {
-	width: 25%;
-	text-align: center;
-	&__col {
-		text-align: center;
-		perspective: 500px;
-		margin: 0 auto;
-	}
-}
-
-.ba-exams {
-	width: 75%;
-	text-align: center;
-	&__col {
-		width: 30%;
-		text-align: center;
-		perspective: 500px;
-	}
-	&__body {
-		display: flex;
-		justify-content: flex-end;
-
-
-	}
-}
-
-.ba-themes {
-	width: 50%;
-	text-align: center;
 }
 
 .ba-slide2 {
@@ -389,4 +360,57 @@ textarea {
 		color: #FFF;
 		box-shadow: none;
 	}
+}
+.ba-materials {
+	padding: 60px 0 80px;
+	background-color: $text-color;
+	color: #FFF;
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__col {
+		width: 15%;
+		text-align: center;
+		perspective: 500px;
+	}
+
+	&__link-text {
+		display: inline-block;
+		font-size: 24px;
+		font-weight: 500;
+		padding: 0 0 10px;
+		border-bottom: 2px solid transparent;
+		margin: 0;
+
+	}
+	&__link {
+		text-decoration: none;
+		color: #fff;
+
+		&:hover .ba-materials__link-text {
+			border-bottom: 2px solid $secondary-color;
+			color: $secondary-color;
+			transition: color 1s;
+		}
+		&:hover .ba-materials__icon {
+			transform: rotateX(180deg);
+			transition: transform 1.5s ease-in-out;
+		}
+	}
+	&__icon {
+		display: inline-block;
+		svg {
+			fill: currentColor;
+			width: 60%;
+		}
+		transform: rotateX(0deg);
+		transition: transform 1.5s ease-in-out;
+	}
+}
+
+
+.cbalink {
+    display: none !important;
 }

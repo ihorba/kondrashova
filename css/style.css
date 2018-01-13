@@ -655,7 +655,9 @@ select {
   right: 0;
   top: 0;
   padding-top: 5px;
-  z-index: 10; }
+  z-index: 10;
+  border-top: 2px solid #4d4d4d;
+  border-bottom: 2px solid #4d4d4d; }
 
 .ba-logo {
   float: left;
@@ -714,8 +716,8 @@ select {
 .ba-photo-container {
   -webkit-animation-name: spin;
   animation-name: spin;
-  -webkit-animation-duration: 4s;
-  animation-duration: 4s;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
@@ -748,7 +750,7 @@ select {
   margin-right: 20px; }
 
 .ba-about {
-  padding: 100px 0; }
+  padding: 60px 0 40px; }
   .ba-about__info img {
     display: block;
     float: right;
@@ -765,7 +767,7 @@ select {
       width: 250px;
       position: absolute;
       left: 0;
-      top: -20px;
+      top: -10px;
       background-color: #4d4d4d; }
 
 .ba-button--about:hover {
@@ -820,10 +822,10 @@ select {
 
 .ba-documents {
   padding: 60px 0 80px;
-  background-color: #e2e2e2; }
+  background: #e2e2e2 url("../img/bg-elements.jpg"); }
 
 .ba-students {
-  background-color: #e2e2e2;
+  background: #e2e2e2 url("../img/bg-elements.jpg");
   padding: 60px 0 80px; }
   .ba-students__title {
     font-size: 46px;
@@ -869,8 +871,6 @@ select {
       transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out; }
   .ba-students__icon {
     display: inline-block;
-    -webkit-perspective: 700px;
-    perspective: 700px;
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
     -webkit-transition: -webkit-transform 1.5s ease-in-out;
@@ -882,35 +882,6 @@ select {
       fill: currentColor;
       width: 60%; }
 
-.ba-works {
-  width: 25%;
-  text-align: center; }
-  .ba-works__col {
-    text-align: center;
-    -webkit-perspective: 500px;
-    perspective: 500px;
-    margin: 0 auto; }
-
-.ba-exams {
-  width: 75%;
-  text-align: center; }
-  .ba-exams__col {
-    width: 30%;
-    text-align: center;
-    -webkit-perspective: 500px;
-    perspective: 500px; }
-  .ba-exams__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
-
-.ba-themes {
-  width: 50%;
-  text-align: center; }
-
 .ba-slide2 {
   margin-right: 20px; }
 
@@ -920,5 +891,63 @@ select {
   color: #FFF;
   -webkit-box-shadow: none;
   box-shadow: none; }
+
+.ba-materials {
+  padding: 60px 0 80px;
+  background-color: #4d4d4d;
+  color: #FFF; }
+  .ba-materials__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .ba-materials__col {
+    width: 15%;
+    text-align: center;
+    -webkit-perspective: 500px;
+    perspective: 500px; }
+  .ba-materials__link-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0 0 10px;
+    border-bottom: 2px solid transparent;
+    margin: 0; }
+  .ba-materials__link {
+    text-decoration: none;
+    color: #fff; }
+    .ba-materials__link:hover .ba-materials__link-text {
+      border-bottom: 2px solid #00bd08;
+      color: #00bd08;
+      -webkit-transition: color 1s;
+      -o-transition: color 1s;
+      transition: color 1s; }
+    .ba-materials__link:hover .ba-materials__icon {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+      -webkit-transition: -webkit-transform 1.5s ease-in-out;
+      transition: -webkit-transform 1.5s ease-in-out;
+      -o-transition: transform 1.5s ease-in-out;
+      transition: transform 1.5s ease-in-out;
+      transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out; }
+  .ba-materials__icon {
+    display: inline-block;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transition: -webkit-transform 1.5s ease-in-out;
+    transition: -webkit-transform 1.5s ease-in-out;
+    -o-transition: transform 1.5s ease-in-out;
+    transition: transform 1.5s ease-in-out;
+    transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out; }
+    .ba-materials__icon svg {
+      fill: currentColor;
+      width: 60%; }
+
+.cbalink {
+  display: none !important; }
 
 /*# sourceMappingURL=style.css.map */
