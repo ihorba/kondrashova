@@ -818,6 +818,10 @@ select {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
+.ba-documents {
+  padding: 60px 0 80px;
+  background-color: #e2e2e2; }
+
 .ba-students {
   background-color: #e2e2e2;
   padding: 60px 0 80px; }
@@ -877,6 +881,35 @@ select {
     .ba-students__icon svg {
       fill: currentColor;
       width: 60%; }
+
+.ba-works {
+  width: 25%;
+  text-align: center; }
+  .ba-works__col {
+    text-align: center;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    margin: 0 auto; }
+
+.ba-exams {
+  width: 75%;
+  text-align: center; }
+  .ba-exams__col {
+    width: 30%;
+    text-align: center;
+    -webkit-perspective: 500px;
+    perspective: 500px; }
+  .ba-exams__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+
+.ba-themes {
+  width: 50%;
+  text-align: center; }
 
 .ba-slide2 {
   margin-right: 20px; }

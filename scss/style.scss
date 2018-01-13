@@ -285,6 +285,11 @@ textarea {
 
 // students
 
+.ba-documents {
+	padding: 60px 0 80px;
+	background-color:  #e2e2e2;
+}
+
 .ba-students {
 	background-color:  #e2e2e2;
 	padding: 60px 0 80px;
@@ -341,6 +346,36 @@ textarea {
 		transform: rotateX(0deg);
 		transition: transform 1.5s ease-in-out;
 	}
+}
+.ba-works {
+	width: 25%;
+	text-align: center;
+	&__col {
+		text-align: center;
+		perspective: 500px;
+		margin: 0 auto;
+	}
+}
+
+.ba-exams {
+	width: 75%;
+	text-align: center;
+	&__col {
+		width: 30%;
+		text-align: center;
+		perspective: 500px;
+	}
+	&__body {
+		display: flex;
+		justify-content: flex-end;
+
+
+	}
+}
+
+.ba-themes {
+	width: 50%;
+	text-align: center;
 }
 
 .ba-slide2 {

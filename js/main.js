@@ -25,26 +25,29 @@
 
 	});
 
+	$(document).ready(function() {
 
-	var teamSlider2 = $('.ba-slider2');
-	teamSlider2.slick({
-		slide: '.ba-slide2',
-		arrows: true,
-		prevArrow: '.ba-slider-prev2',
-		nextArrow: '.ba-slider-next2',
-		centerMode: true,
-		centerPadding: '60px',
-		slidesToShow: 3,
-		responsive: [
-		{
-			breakpoint: 768,
-			settings: {
-				centerMode: true,
-				centerPadding: '40px',
-				slidesToShow: 1
+		var teamSlider2 = $('.ba-slider2');
+		teamSlider2.slick({
+			slide: '.ba-slide2',
+			arrows: true,
+			prevArrow: '.ba-slider-prev2',
+			nextArrow: '.ba-slider-next2',
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 3,
+			responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					centerMode: true,
+					centerPadding: '40px',
+					slidesToShow: 1
+				}
 			}
-		}
-		]
+			]
+		});
+
 	});
 
 
